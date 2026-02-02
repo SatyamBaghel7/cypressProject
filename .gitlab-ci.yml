@@ -1,4 +1,6 @@
-image: cypress/included:15.9.0
+image:
+  name: cypress/included:15.9.0
+  entrypoint: [""]
 
 stages:
   - test
@@ -6,5 +8,7 @@ stages:
 cypress_test:
   stage: test
   script:
+    - node -v
+    - npm -v
     - npm ci
     - npm run cy:tests
