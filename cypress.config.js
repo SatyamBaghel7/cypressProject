@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   env:{
-    applicationUrl:"https://www.saucedemo.com/"
+    baseUrl:"https://www.saucedemo.com/"
   },
   reporter:'cypress-mochawesome-reporter',
   reporterOptions: {

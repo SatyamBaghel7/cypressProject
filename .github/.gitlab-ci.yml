@@ -1,0 +1,18 @@
+image: cypress/included:15.9.0
+
+stages:
+  - test
+
+cache:
+  key: npm-cache
+  paths:
+    - node_modules/
+
+variables:
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/.cache/Cypress"
+
+cypress_tests:
+  stage: test
+  script:
+    - npm ci
+    - npm run cy:tests
