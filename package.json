@@ -1,0 +1,23 @@
+{
+  "name": "cypressframework",
+  "version": "1.0.0",
+  "description": "This project is basically a test automation framework built on cypress and javascript.",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:tests": "cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome",
+    "cy:tests:SANITY:CHROME":"cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome --env grep=@sanity",
+    "cy:tests:REGRESSION:CHROME":"cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome --env grep=@regression"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cypress/grep": "^5.1.0",
+    "cypress": "^15.9.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "cypress-xpath": "^2.0.1"
+  }
+}
