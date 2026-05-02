@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'cypress/included:15.9.0'
-            args '-u root:root'
-        }
-    }
+    agent any
 
     options {
         timestamps()
@@ -29,9 +24,9 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'node -v'
-                sh 'npm -v'
-                sh 'npm ci'
+                bat 'node -v'
+                bat 'npm -v'
+                bat 'npm ci'
             }
         }
 
@@ -44,7 +39,7 @@ pipeline {
                         REGRESSION: 'npm run cy:tests:REGRESSION:CHROME'
                     ]
 
-                    sh testCommands[params.TEST_SUITE]
+                    bat testCommands[params.TEST_SUITE]
                 }
             }
         }
