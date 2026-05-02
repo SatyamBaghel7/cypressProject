@@ -6,9 +6,8 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:tests": "cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome",
-    "cy:tests:SANITY:CHROME":"cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome --env grep=@sanity",
-    "cy:tests:REGRESSION:CHROME":"cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome --env grep=@regression"
-
+    "cy:tests:SANITY:CHROME": "cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome --env grep=@sanity",
+    "cy:tests:REGRESSION:CHROME": "cypress run --spec cypress/e2e/SauceDemo/*.cy.js --headed --browser chrome --env grep=@regression"
   },
   "keywords": [],
   "author": "",
