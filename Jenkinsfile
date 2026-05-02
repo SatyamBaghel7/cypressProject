@@ -51,6 +51,14 @@ pipeline {
                 artifacts: 'cypress/reports/**/*, cypress/screenshots/**/*, cypress/videos/**/*',
                 allowEmptyArchive: true
             )
+            publishHTML(target: [
+                reportDir: 'cypress/reports/sauceDemo',
+                reportFiles: 'index.html',
+                reportName: 'Cypress Mochawesome Report',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: true
+            ])
         }
         success {
             echo 'Cypress pipeline completed successfully.'
